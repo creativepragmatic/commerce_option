@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains commerce_option.module..
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function commerce_option_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the commerce_option module.
+    case 'help.page.commerce_option':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Enables per product user input fields on the produce page and displays their values in the shopping cart.') . '</p>';
+      return $output;
+
+    default:
+  }
+}

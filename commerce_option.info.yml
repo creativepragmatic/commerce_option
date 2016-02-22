@@ -1,0 +1,5 @@
+name: Commerce Option
+type: module
+description: Enables per product user input fields on the produce page and displays their values in the shopping cart.
+core: 8.x
+package: Commerce (contrib)
