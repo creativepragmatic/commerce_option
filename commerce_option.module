@@ -22,3 +22,37 @@ function commerce_option_help($route_name, RouteMatchInterface $route_match) {
     default:
   }
 }
+
+/**
+ * Implements hook_theme().
+ */
+function commerce_option_theme() {
+  $theme = [];
+  $theme['commerce_option'] = [
+    'render element' => 'elements',
+    'file' => 'commerce_option.page.inc',
+    'template' => 'commerce_option',
+  ];
+  $theme['commerce_option_content_add_list'] = [
+    'render element' => 'content',
+    'variables' => ['content' => NULL],
+    'file' => 'commerce_option.page.inc',
+  ];
+  return $theme;
+}
+
+/**
+* Implements hook_theme_suggestions_HOOK().
+*/
+function commerce_option_theme_suggestions_commerce_option(array $variables) {
+  $suggestions = array();
+  $entity = $variables['elements']['#commerce_option'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'commerce_option__' . $sanitized_view_mode;
+  $suggestions[] = 'commerce_option__' . $entity->bundle();
+  $suggestions[] = 'commerce_option__' . $entity->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'commerce_option__' . $entity->id();
+  $suggestions[] = 'commerce_option__' . $entity->id() . '__' . $sanitized_view_mode;
+  return $suggestions;
+}

@@ -1,0 +1,19 @@
+add commerce option entities:
+  title: 'Create new Commerce Option entities'
+
+administer commerce option entities:
+  title: 'Administer Commerce Option entities'
+  description: 'Allow to access the administration form to configure Commerce Option entities.'
+  restrict access: true
+
+delete commerce option entities:
+  title: 'Delete Commerce Option entities'
+
+edit commerce option entities:
+  title: 'Edit Commerce Option entities'
+
+view published commerce option entities:
+  title: 'View published Commerce Option entities'
+
+view unpublished commerce option entities:
+  title: 'View unpublished Commerce Option entities'

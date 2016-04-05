@@ -1,0 +1,17 @@
+# Commerce Option routing definition
+entity.commerce_option.canonical:
+  route_name: entity.commerce_option.canonical
+  base_route: entity.commerce_option.canonical
+  title: 'View'
+
+entity.commerce_option.edit_form:
+  route_name: entity.commerce_option.edit_form
+  base_route: entity.commerce_option.canonical
+  title: Edit
+
+entity.commerce_option.delete_form:
+  route_name:  entity.commerce_option.delete_form
+  base_route:  entity.commerce_option.canonical
+  title: Delete
+  weight: 10
+

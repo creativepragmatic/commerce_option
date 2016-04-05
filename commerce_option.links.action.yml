@@ -1,0 +1,11 @@
+entity.commerce_option.add_form:
+  route_name: 'commerce_option.add_page'
+  title: 'Add Commerce Option'
+  appears_on:
+    - entity.commerce_option.collection
+entity.commerce_option_type.add_form:
+  route_name: 'entity.commerce_option_type.add_form'
+  title: 'Add Commerce Option type'
+  appears_on:
+    - entity.commerce_option_type.collection
+
