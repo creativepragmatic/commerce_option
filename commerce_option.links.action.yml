@@ -3,9 +3,9 @@ entity.commerce_option.add_form:
   title: 'Add Commerce Option'
   appears_on:
     - entity.commerce_option.collection
-entity.commerce_option_type.add_form:
-  route_name: 'entity.commerce_option_type.add_form'
+
+entity.commerce_option_set.add_form:
+  route_name: 'entity.commerce_option_set.add_form'
   title: 'Add Commerce Option type'
   appears_on:
-    - entity.commerce_option_type.collection
-
+    - entity.commerce_option_set.collection

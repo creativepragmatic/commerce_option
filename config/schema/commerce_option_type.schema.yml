@@ -1,4 +1,4 @@
-commerce_option.commerce_option_type.*:
+commerce_option.commerce_option_set.*:
   type: config_entity
   label: 'Commerce Option type config'
   mapping:

@@ -15,13 +15,13 @@ use Drupal\Core\Url;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Request;
 
-
 /**
  * Class CommerceOptionAddController.
  *
  * @package Drupal\commerce_option\Controller
  */
 class CommerceOptionAddController extends ControllerBase {
+
     public function __construct(EntityStorageInterface $storage, EntityStorageInterface $type_storage) {
       $this->storage = $storage;
       $this->typeStorage = $type_storage;
@@ -35,9 +35,10 @@ class CommerceOptionAddController extends ControllerBase {
       $entity_type_manager = $container->get('entity_type.manager');
       return new static(
         $entity_type_manager->getStorage('commerce_option'),
-        $entity_type_manager->getStorage('commerce_option_type')
+        $entity_type_manager->getStorage('commerce_option_set')
       );
     }
+
     /**
      * Displays add links for available bundles/types for entity commerce_option .
      *
@@ -58,7 +59,7 @@ class CommerceOptionAddController extends ControllerBase {
         return array(
           '#markup' => $this->t('You have not created any %bundle types yet. @link to add a new type.', [
             '%bundle' => 'Commerce Option',
-            '@link' => $this->l($this->t('Go to the type creation page'), Url::fromRoute('entity.commerce_option_type.add_form')),
+            '@link' => $this->l($this->t('Go to the type creation page'), Url::fromRoute('entity.commerce_option_set.add_form')),
           ]),
         );
       }
@@ -68,7 +69,7 @@ class CommerceOptionAddController extends ControllerBase {
     /**
      * Presents the creation form for commerce_option entities of given bundle/type.
      *
-     * @param EntityInterface $commerce_option_type
+     * @param EntityInterface $commerce_option_set
      *   The custom bundle to add.
      * @param \Symfony\Component\HttpFoundation\Request $request
      *   The current request object.
@@ -76,9 +77,9 @@ class CommerceOptionAddController extends ControllerBase {
      * @return array
      *   A form array as expected by drupal_render().
      */
-    public function addForm(EntityInterface $commerce_option_type, Request $request) {
+    public function addForm(EntityInterface $commerce_option_set, Request $request) {
       $entity = $this->storage->create(array(
-        'type' => $commerce_option_type->id()
+        'type' => $commerce_option_set->id()
       ));
       return $this->entityFormBuilder()->getForm($entity);
     }
@@ -86,15 +87,15 @@ class CommerceOptionAddController extends ControllerBase {
     /**
      * Provides the page title for this controller.
      *
-     * @param EntityInterface $commerce_option_type
+     * @param EntityInterface $commerce_option_set
      *   The custom bundle/type being added.
      *
      * @return string
      *   The page title.
      */
-    public function getAddFormTitle(EntityInterface $commerce_option_type) {
+    public function getAddFormTitle(EntityInterface $commerce_option_set) {
       return t('Create of bundle @label',
-        array('@label' => $commerce_option_type->label())
+        array('@label' => $commerce_option_set->label())
       );
     }
 

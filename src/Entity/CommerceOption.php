@@ -53,13 +53,13 @@ use Drupal\user\UserInterface;
  *   },
  *   links = {
  *     "canonical" = "/admin/structure/commerce_option/{commerce_option}",
- *     "add-form" = "/admin/structure/commerce_option/add/{commerce_option_type}",
+ *     "add-form" = "/admin/structure/commerce_option/add/{commerce_option_set}",
  *     "edit-form" = "/admin/structure/commerce_option/{commerce_option}/edit",
  *     "delete-form" = "/admin/structure/commerce_option/{commerce_option}/delete",
  *     "collection" = "/admin/structure/commerce_option",
  *   },
- *   bundle_entity_type = "commerce_option_type",
- *   field_ui_base_route = "entity.commerce_option_type.edit_form"
+ *   bundle_entity_type = "commerce_option_set",
+ *   field_ui_base_route = "entity.commerce_option_set.edit_form"
  * )
  */
 class CommerceOption extends ContentEntityBase implements CommerceOptionInterface {
@@ -167,7 +167,7 @@ class CommerceOption extends ContentEntityBase implements CommerceOptionInterfac
     $fields['type'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Type'))
       ->setDescription(t('The Commerce Option type/bundle.'))
-      ->setSetting('target_type', 'commerce_option_type')
+      ->setSetting('target_type', 'commerce_option_set')
       ->setRequired(TRUE);
     $fields['uuid'] = BaseFieldDefinition::create('uuid')
       ->setLabel(t('UUID'))

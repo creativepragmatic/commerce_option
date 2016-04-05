@@ -45,15 +45,21 @@ function template_preprocess_commerce_option_content_add_list(&$variables) {
   $query = \Drupal::request()->query->all();
   foreach ($variables['content'] as $type) {
     $variables['types'][$type->id()] = array(
-      'link' => Link::fromTextAndUrl($type->label(), new Url('entity.commerce_option.add_form', array(
-        'commerce_option_type' => $type->id()
-      ), array('query' => $query))),
+      'link' => Link::fromTextAndUrl(
+        $type->label(), 
+        new Url('entity.commerce_option.add_form',
+          array(
+            'commerce_option_set' => $type->id()
+          ),
+          array('query' => $query)
+        )
+      ),
       'description' => array(
-      '#markup' => $type->label(),
+        '#markup' => $type->label(),
       ),
       'title' => $type->label(),
       'localized_options' => array(
-      'query' => $query,
+        'query' => $query,
       ),
     );
   }

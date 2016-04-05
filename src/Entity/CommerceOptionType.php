@@ -14,7 +14,7 @@ use Drupal\commerce_option\CommerceOptionTypeInterface;
  * Defines the Commerce Option type entity.
  *
  * @ConfigEntityType(
- *   id = "commerce_option_type",
+ *   id = "commerce_option_set",
  *   label = @Translation("Commerce Option type"),
  *   handlers = {
  *     "list_builder" = "Drupal\commerce_option\CommerceOptionTypeListBuilder",
@@ -27,7 +27,7 @@ use Drupal\commerce_option\CommerceOptionTypeInterface;
  *       "html" = "Drupal\commerce_option\CommerceOptionTypeHtmlRouteProvider",
  *     },
  *   },
- *   config_prefix = "commerce_option_type",
+ *   config_prefix = "commerce_option_set",
  *   admin_permission = "administer site configuration",
  *   bundle_of = "commerce_option",
  *   entity_keys = {
@@ -36,11 +36,11 @@ use Drupal\commerce_option\CommerceOptionTypeInterface;
  *     "uuid" = "uuid"
  *   },
  *   links = {
- *     "canonical" = "/admin/structure/commerce_option_type/{commerce_option_type}",
- *     "add-form" = "/admin/structure/commerce_option_type/add",
- *     "edit-form" = "/admin/structure/commerce_option_type/{commerce_option_type}/edit",
- *     "delete-form" = "/admin/structure/commerce_option_type/{commerce_option_type}/delete",
- *     "collection" = "/admin/structure/commerce_option_type"
+ *     "canonical" = "/admin/structure/commerce_option_set/{commerce_option_set}",
+ *     "add-form" = "/admin/structure/commerce_option_set/add",
+ *     "edit-form" = "/admin/structure/commerce_option_set/{commerce_option_set}/edit",
+ *     "delete-form" = "/admin/structure/commerce_option_set/{commerce_option_set}/delete",
+ *     "collection" = "/admin/structure/commerce_option_set"
  *   }
  * )
  */
