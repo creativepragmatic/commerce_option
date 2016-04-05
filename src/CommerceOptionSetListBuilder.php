@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains \Drupal\commerce_option\CommerceOptionTypeListBuilder.
+ * Contains \Drupal\commerce_option\CommerceOptionSetListBuilder.
  */
 
 namespace Drupal\commerce_option;
@@ -13,7 +13,7 @@ use Drupal\Core\Entity\EntityInterface;
 /**
  * Provides a listing of Commerce Option type entities.
  */
-class CommerceOptionTypeListBuilder extends ConfigEntityListBuilder {
+class CommerceOptionSetListBuilder extends ConfigEntityListBuilder {
   /**
    * {@inheritdoc}
    */

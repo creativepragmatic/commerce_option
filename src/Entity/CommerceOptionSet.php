@@ -2,13 +2,13 @@
 
 /**
  * @file
- * Contains \Drupal\commerce_option\Entity\CommerceOptionType.
+ * Contains \Drupal\commerce_option\Entity\CommerceOptionSet.
  */
 
 namespace Drupal\commerce_option\Entity;
 
 use Drupal\Core\Config\Entity\ConfigEntityBundleBase;
-use Drupal\commerce_option\CommerceOptionTypeInterface;
+use Drupal\commerce_option\CommerceOptionSetInterface;
 
 /**
  * Defines the Commerce Option type entity.
@@ -17,14 +17,14 @@ use Drupal\commerce_option\CommerceOptionTypeInterface;
  *   id = "commerce_option_set",
  *   label = @Translation("Commerce Option type"),
  *   handlers = {
- *     "list_builder" = "Drupal\commerce_option\CommerceOptionTypeListBuilder",
+ *     "list_builder" = "Drupal\commerce_option\CommerceOptionSetListBuilder",
  *     "form" = {
- *       "add" = "Drupal\commerce_option\Form\CommerceOptionTypeForm",
- *       "edit" = "Drupal\commerce_option\Form\CommerceOptionTypeForm",
- *       "delete" = "Drupal\commerce_option\Form\CommerceOptionTypeDeleteForm"
+ *       "add" = "Drupal\commerce_option\Form\CommerceOptionSetForm",
+ *       "edit" = "Drupal\commerce_option\Form\CommerceOptionSetForm",
+ *       "delete" = "Drupal\commerce_option\Form\CommerceOptionSetDeleteForm"
  *     },
  *     "route_provider" = {
- *       "html" = "Drupal\commerce_option\CommerceOptionTypeHtmlRouteProvider",
+ *       "html" = "Drupal\commerce_option\CommerceOptionSetHtmlRouteProvider",
  *     },
  *   },
  *   config_prefix = "commerce_option_set",
@@ -44,7 +44,7 @@ use Drupal\commerce_option\CommerceOptionTypeInterface;
  *   }
  * )
  */
-class CommerceOptionType extends ConfigEntityBundleBase implements CommerceOptionTypeInterface {
+class CommerceOptionSet extends ConfigEntityBundleBase implements CommerceOptionSetInterface {
   /**
    * The Commerce Option type ID.
    *

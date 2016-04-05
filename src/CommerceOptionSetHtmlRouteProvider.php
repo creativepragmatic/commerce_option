@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains \Drupal\commerce_option\CommerceOptionTypeHtmlRouteProvider.
+ * Contains \Drupal\commerce_option\CommerceOptionSetHtmlRouteProvider.
  */
 
 namespace Drupal\commerce_option;
@@ -17,7 +17,7 @@ use Symfony\Component\Routing\Route;
  * @see Drupal\Core\Entity\Routing\AdminHtmlRouteProvider
  * @see Drupal\Core\Entity\Routing\DefaultHtmlRouteProvider
  */
-class CommerceOptionTypeHtmlRouteProvider extends AdminHtmlRouteProvider {
+class CommerceOptionSetHtmlRouteProvider extends AdminHtmlRouteProvider {
   /**
    * {@inheritdoc}
    */

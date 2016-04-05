@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains \Drupal\commerce_option\Form\CommerceOptionTypeForm.
+ * Contains \Drupal\commerce_option\Form\CommerceOptionSetForm.
  */
 
 namespace Drupal\commerce_option\Form;
@@ -11,11 +11,11 @@ use Drupal\Core\Entity\EntityForm;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Class CommerceOptionTypeForm.
+ * Class CommerceOptionSetForm.
  *
  * @package Drupal\commerce_option\Form
  */
-class CommerceOptionTypeForm extends EntityForm {
+class CommerceOptionSetForm extends EntityForm {
   /**
    * {@inheritdoc}
    */
@@ -36,7 +36,7 @@ class CommerceOptionTypeForm extends EntityForm {
       '#type' => 'machine_name',
       '#default_value' => $commerce_option_set->id(),
       '#machine_name' => array(
-        'exists' => '\Drupal\commerce_option\Entity\CommerceOptionType::load',
+        'exists' => '\Drupal\commerce_option\Entity\CommerceOptionSet::load',
       ),
       '#disabled' => !$commerce_option_set->isNew(),
     );

@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains \Drupal\commerce_option\Form\CommerceOptionTypeDeleteForm.
+ * Contains \Drupal\commerce_option\Form\CommerceOptionSetDeleteForm.
  */
 
 namespace Drupal\commerce_option\Form;
@@ -14,7 +14,7 @@ use Drupal\Core\Url;
 /**
  * Builds the form to delete Commerce Option type entities.
  */
-class CommerceOptionTypeDeleteForm extends EntityConfirmFormBase {
+class CommerceOptionSetDeleteForm extends EntityConfirmFormBase {
   /**
    * {@inheritdoc}
    */
