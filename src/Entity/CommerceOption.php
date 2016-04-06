@@ -23,12 +23,11 @@ use Drupal\user\UserInterface;
  * @ContentEntityType(
  *   id = "commerce_option",
  *   label = @Translation("Commerce Option"),
- *   bundle_label = @Translation("Commerce Option type"),
+ *   bundle_label = @Translation("Commerce Option Set"),
  *   handlers = {
  *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
  *     "list_builder" = "Drupal\commerce_option\CommerceOptionListBuilder",
  *     "views_data" = "Drupal\commerce_option\Entity\CommerceOptionViewsData",
- *
  *     "form" = {
  *       "default" = "Drupal\commerce_option\Form\CommerceOptionForm",
  *       "add" = "Drupal\commerce_option\Form\CommerceOptionForm",
@@ -63,7 +62,9 @@ use Drupal\user\UserInterface;
  * )
  */
 class CommerceOption extends ContentEntityBase implements CommerceOptionInterface {
+
   use EntityChangedTrait;
+
   /**
    * {@inheritdoc}
    */
@@ -160,15 +161,18 @@ class CommerceOption extends ContentEntityBase implements CommerceOptionInterfac
    * {@inheritdoc}
    */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
+
     $fields['id'] = BaseFieldDefinition::create('integer')
       ->setLabel(t('ID'))
       ->setDescription(t('The ID of the Commerce Option entity.'))
       ->setReadOnly(TRUE);
+
     $fields['type'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Type'))
       ->setDescription(t('The Commerce Option type/bundle.'))
       ->setSetting('target_type', 'commerce_option_set')
       ->setRequired(TRUE);
+
     $fields['uuid'] = BaseFieldDefinition::create('uuid')
       ->setLabel(t('UUID'))
       ->setDescription(t('The UUID of the Commerce Option entity.'))

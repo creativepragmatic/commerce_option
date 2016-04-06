@@ -1,16 +1,15 @@
 # Commerce Option menu items definition
-entity.commerce_option.collection:
-  title: 'Commerce Option list'
-  route_name: entity.commerce_option.collection
-  description: 'List Commerce Option entities'
-  parent: system.admin_structure
-  weight: 100
+#entity.commerce_option.collection:
+#  title: 'Commerce Options'
+#  route_name: entity.commerce_option.collection
+#  description: 'List Commerce Options'
+#  parent: system.admin_structure
+#  weight: 100
 
 # Commerce Option Set menu items definition
 entity.commerce_option_set.collection:
-  title: 'Commerce Option Set'
+  title: 'Product option sets'
   route_name: entity.commerce_option_set.collection
-  description: 'List Commerce Option type (bundles)'
-  parent: system.admin_structure
-  weight: 99
-
+  description: 'Manage product option sets'
+  parent: commerce.admin_commerce
+#  weight: 99

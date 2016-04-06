@@ -14,10 +14,12 @@ use Drupal\views\EntityViewsDataInterface;
  * Provides Views data for Commerce Option entities.
  */
 class CommerceOptionViewsData extends EntityViewsData implements EntityViewsDataInterface {
+
   /**
    * {@inheritdoc}
    */
   public function getViewsData() {
+
     $data = parent::getViewsData();
 
     $data['commerce_option']['table']['base'] = array(

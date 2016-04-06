@@ -11,11 +11,11 @@ use Drupal\Core\Config\Entity\ConfigEntityBundleBase;
 use Drupal\commerce_option\CommerceOptionSetInterface;
 
 /**
- * Defines the Commerce Option type entity.
+ * Defines the Commerce Option Set entity.
  *
  * @ConfigEntityType(
  *   id = "commerce_option_set",
- *   label = @Translation("Commerce Option type"),
+ *   label = @Translation("Commerce Option Set"),
  *   handlers = {
  *     "list_builder" = "Drupal\commerce_option\CommerceOptionSetListBuilder",
  *     "form" = {
@@ -45,15 +45,16 @@ use Drupal\commerce_option\CommerceOptionSetInterface;
  * )
  */
 class CommerceOptionSet extends ConfigEntityBundleBase implements CommerceOptionSetInterface {
+
   /**
-   * The Commerce Option type ID.
+   * The Commerce Option Set ID.
    *
    * @var string
    */
   protected $id;
 
   /**
-   * The Commerce Option type label.
+   * The Commerce Option Set label.
    *
    * @var string
    */
